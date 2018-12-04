@@ -5,8 +5,8 @@ import ReactDOM from "react-dom";
 class Timer extends React.Component {
   render() {
     const componentStyle = {
-      backgroundColor: this.props.color,
-      fontSize: '25vw'
+      color: this.props.color,
+      fontSize: '20vw'
     };
     return (
       <div>

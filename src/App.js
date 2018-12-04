@@ -12,7 +12,7 @@ class App extends React.Component {
       seconds: '00',
       value: '',
       isClicked : false,
-      color: 'white'
+      color: 'black'
     }
     this.secondsRemaining = null;
     this.intervalHandle= null;
@@ -33,7 +33,9 @@ class App extends React.Component {
   tick() {
     var min = Math.floor(this.secondsRemaining / 60);
     var sec = this.secondsRemaining - (min * 60);
-
+    var audio = new Audio('beep')
+    var audio2 = new Audio('grunt')
+    audio2.play();
     this.setState({
       value: min,
       seconds: sec,
@@ -55,6 +57,7 @@ class App extends React.Component {
     }
 
     if (min === 0 & sec === 0) {
+      audio2.play()
       clearInterval(this.intervalHandle);
     }
 
